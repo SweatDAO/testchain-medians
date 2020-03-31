@@ -20,6 +20,17 @@ pragma solidity ^0.5.15;
 import "median/median.sol";
 
 // USD
+contract MedianCOINUSD is Median {
+    bytes32 public constant wat = "COINUSD";
+
+    function recover(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
+        return ecrecover(
+            keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", keccak256(abi.encodePacked(val_, age_, wat)))),
+            v, r, s
+        );
+    }
+}
+
 contract MedianETHUSD is Median {
     bytes32 public constant wat = "ETHUSD";
 
@@ -54,6 +65,17 @@ contract MedianZBTCUSD is Median {
 }
 
 // EUR
+contract MedianCOINEUR is Median {
+    bytes32 public constant wat = "COINEUR";
+
+    function recover(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
+        return ecrecover(
+            keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", keccak256(abi.encodePacked(val_, age_, wat)))),
+            v, r, s
+        );
+    }
+}
+
 contract MedianETHEUR is Median {
     bytes32 public constant wat = "ETHEUR";
 
@@ -88,6 +110,17 @@ contract MedianZBTCEUR is Median {
 }
 
 // JPY
+contract MedianCOINJPY is Median {
+    bytes32 public constant wat = "COINJPY";
+
+    function recover(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
+        return ecrecover(
+            keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", keccak256(abi.encodePacked(val_, age_, wat)))),
+            v, r, s
+        );
+    }
+}
+
 contract MedianETHJPY is Median {
     bytes32 public constant wat = "ETHJPY";
 
