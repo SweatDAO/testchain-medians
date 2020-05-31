@@ -20,7 +20,7 @@ pragma solidity ^0.5.15;
 import "geb-off-chain-median/PriceFeedMedianizer.sol";
 
 // USD
-contract MedianRAIUSD is PriceFeedMedianizer {
+contract GovernanceLedMedianRAIUSD is PriceFeedMedianizer {
     bytes32 public constant symbol = "RAIUSD";
 
     function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
@@ -31,7 +31,7 @@ contract MedianRAIUSD is PriceFeedMedianizer {
     }
 }
 
-contract MedianETHUSD is PriceFeedMedianizer {
+contract GovernanceLedMedianETHUSD is PriceFeedMedianizer {
     bytes32 public constant symbol = "ETHUSD";
 
     function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
