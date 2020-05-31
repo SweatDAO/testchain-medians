@@ -1,3 +1,6 @@
-[submodule "lib/geb-off-chain-median"]
-	path = lib/geb-off-chain-median
-	url = https://github.com/reflexer-labs/geb-off-chain-median.git
+[submodule "lib/geb-governance-led-median"]
+	path = lib/geb-governance-led-median
+	url = https://github.com/reflexer-labs/geb-governance-led-median.git
+[submodule "lib/geb-chainlink-medianizer"]
+	path = lib/geb-chainlink-medianizer
+	url = https://github.com/reflexer-labs/geb-chainlink-medianizer.git

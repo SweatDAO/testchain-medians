@@ -1,4 +1,4 @@
-// CollateralPriceFeedMedianizer.sol - Medianizer for specific collateral types
+// GovernanceLedMedian.sol
 
 // Copyright (C) 2017, 2018  DappHub, LLC
 
@@ -17,10 +17,10 @@
 
 pragma solidity ^0.5.15;
 
-import "geb-off-chain-median/PriceFeedMedianizer.sol";
+import "geb-governance-led-median/GovernanceLedPriceFeedMedianizer.sol";
 
 // USD
-contract GovernanceLedMedianRAIUSD is PriceFeedMedianizer {
+contract GovernanceLedMedianRAIUSD is GovernanceLedPriceFeedMedianizer {
     bytes32 public constant symbol = "RAIUSD";
 
     function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
@@ -31,7 +31,7 @@ contract GovernanceLedMedianRAIUSD is PriceFeedMedianizer {
     }
 }
 
-contract GovernanceLedMedianETHUSD is PriceFeedMedianizer {
+contract GovernanceLedMedianETHUSD is GovernanceLedPriceFeedMedianizer {
     bytes32 public constant symbol = "ETHUSD";
 
     function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
