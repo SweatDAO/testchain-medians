@@ -17,7 +17,7 @@
 
 pragma solidity ^0.5.15;
 
-import "geb-chainlink-medianizer/ChainlinkPriceFeedMedianizer.sol";
+import "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
 
 // USD
 contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
