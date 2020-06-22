@@ -15,15 +15,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.5.15;
+pragma solidity ^0.6.7;
 
 import "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
 
 // USD
 contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
-    bytes32 public constant symbol = "RAIUSD";
+    constructor(address aggregator) ChainlinkPriceFeedMedianizer(aggregator) public {
+        symbol = "RAIUSD";
+    }
 }
 
 contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
-    bytes32 public constant symbol = "ETHUSD";
+    constructor(address aggregator) ChainlinkPriceFeedMedianizer(aggregator) public {
+        symbol = "ETHUSD";
+    }
+}
+
+contract ChainlinkMedianPROTUSD is ChainlinkPriceFeedMedianizer {
+    constructor(address aggregator) ChainlinkPriceFeedMedianizer(aggregator) public {
+        symbol = "PROTUSD";
+    }
 }

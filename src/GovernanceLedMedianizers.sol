@@ -15,15 +15,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.5.15;
+pragma solidity ^0.6.7;
 
 import "geb-governance-led-median/GovernanceLedPriceFeedMedianizer.sol";
 
 // USD
 contract GovernanceLedMedianRAIUSD is GovernanceLedPriceFeedMedianizer {
-    bytes32 public constant symbol = "RAIUSD";
+    constructor() GovernanceLedPriceFeedMedianizer() public {
+        symbol = "RAIUSD";
+    }
 
-    function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
+    function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) override internal view returns (address) {
         return ecrecover(
             keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", keccak256(abi.encodePacked(val_, age_, symbol)))),
             v, r, s
@@ -32,9 +34,24 @@ contract GovernanceLedMedianRAIUSD is GovernanceLedPriceFeedMedianizer {
 }
 
 contract GovernanceLedMedianETHUSD is GovernanceLedPriceFeedMedianizer {
-    bytes32 public constant symbol = "ETHUSD";
+    constructor() GovernanceLedPriceFeedMedianizer() public {
+        symbol = "ETHUSD";
+    }
 
-    function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) internal pure returns (address) {
+    function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) override internal view returns (address) {
+        return ecrecover(
+            keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", keccak256(abi.encodePacked(val_, age_, symbol)))),
+            v, r, s
+        );
+    }
+}
+
+contract GovernanceLedMedianPROTUSD is GovernanceLedPriceFeedMedianizer {
+    constructor() GovernanceLedPriceFeedMedianizer() public {
+        symbol = "PROTUSD";
+    }
+
+    function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) override internal view returns (address) {
         return ecrecover(
             keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", keccak256(abi.encodePacked(val_, age_, symbol)))),
             v, r, s
