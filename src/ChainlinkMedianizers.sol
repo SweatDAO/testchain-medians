@@ -32,8 +32,8 @@ contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
     }
 }
 
-contract ChainlinkMedianPROTUSD is ChainlinkPriceFeedMedianizer {
+contract ChainlinkMedianFLXUSD is ChainlinkPriceFeedMedianizer {
     constructor(address aggregator) ChainlinkPriceFeedMedianizer(aggregator) public {
-        symbol = "PROTUSD";
+        symbol = "FLXUSD";
     }
 }

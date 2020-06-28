@@ -46,9 +46,9 @@ contract GovernanceLedMedianETHUSD is GovernanceLedPriceFeedMedianizer {
     }
 }
 
-contract GovernanceLedMedianPROTUSD is GovernanceLedPriceFeedMedianizer {
+contract GovernanceLedMedianFLXUSD is GovernanceLedPriceFeedMedianizer {
     constructor() GovernanceLedPriceFeedMedianizer() public {
-        symbol = "PROTUSD";
+        symbol = "FLXUSD";
     }
 
     function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) override internal view returns (address) {
