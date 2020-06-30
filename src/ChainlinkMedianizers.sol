@@ -23,17 +23,20 @@ import "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
 contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
     constructor(address aggregator) ChainlinkPriceFeedMedianizer(aggregator) public {
         symbol = "RAIUSD";
+        multiplier = 10;
     }
 }
 
 contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
     constructor(address aggregator) ChainlinkPriceFeedMedianizer(aggregator) public {
         symbol = "ETHUSD";
+        multiplier = 10;
     }
 }
 
 contract ChainlinkMedianFLXUSD is ChainlinkPriceFeedMedianizer {
     constructor(address aggregator) ChainlinkPriceFeedMedianizer(aggregator) public {
         symbol = "FLXUSD";
+        multiplier = 10;
     }
 }
