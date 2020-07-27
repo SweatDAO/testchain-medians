@@ -1,6 +1,6 @@
 // ChainlinkMedian.sol
 
-// Copyright (C) 2017, 2018  DappHub, LLC
+// Copyright (C) 2020 Reflexer Labs, INC
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
