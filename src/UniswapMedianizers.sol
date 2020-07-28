@@ -24,8 +24,6 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
     constructor(
       address converterFeed_,
       address uniswapFactory_,
-      address targetToken_,
-      address denominationToken_,
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
@@ -33,8 +31,6 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
     ) UniswapPriceFeedMedianizer(
         converterFeed_,
         uniswapFactory_,
-        targetToken_,
-        denominationToken_,
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
@@ -48,8 +44,6 @@ contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
     constructor(
       address converterFeed_,
       address uniswapFactory_,
-      address targetToken_,
-      address denominationToken_,
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
@@ -57,8 +51,6 @@ contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
     ) UniswapPriceFeedMedianizer(
         converterFeed_,
         uniswapFactory_,
-        targetToken_,
-        denominationToken_,
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
