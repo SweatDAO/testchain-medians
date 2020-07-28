@@ -22,14 +22,13 @@ import "geb-uniswap-median/UniswapPriceFeedMedianizer.sol";
 // USD
 contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
     constructor(
-      address converterFeed_,
       address uniswapFactory_,
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
       uint8   granularity_
     ) UniswapPriceFeedMedianizer(
-        converterFeed_,
+        address(0),
         uniswapFactory_,
         defaultAmountIn_,
         windowSize_,
@@ -42,14 +41,13 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
 
 contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
     constructor(
-      address converterFeed_,
       address uniswapFactory_,
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
       uint8   granularity_
     ) UniswapPriceFeedMedianizer(
-        converterFeed_,
+        address(0),
         uniswapFactory_,
         defaultAmountIn_,
         windowSize_,
