@@ -21,21 +21,39 @@ import "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
 
 // USD
 contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
-    constructor(address aggregator, uint updateCallerReward) ChainlinkPriceFeedMedianizer(aggregator, address(0), updateCallerReward) public {
+    constructor(
+      address aggregator,
+      uint256 periodSize,
+      uint256 baseUpdateCallerReward,
+      uint256 maxUpdateCallerReward,
+      uint256 perSecondCallerRewardIncrease
+    ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
         symbol = "RAIUSD";
         multiplier = 10;
     }
 }
 
 contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
-    constructor(address aggregator, uint updateCallerReward) ChainlinkPriceFeedMedianizer(aggregator, address(0), updateCallerReward) public {
+  constructor(
+    address aggregator,
+    uint256 periodSize,
+    uint256 baseUpdateCallerReward,
+    uint256 maxUpdateCallerReward,
+    uint256 perSecondCallerRewardIncrease
+  ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
         symbol = "ETHUSD";
         multiplier = 10;
     }
 }
 
 contract ChainlinkMedianFLXUSD is ChainlinkPriceFeedMedianizer {
-    constructor(address aggregator, uint updateCallerReward) ChainlinkPriceFeedMedianizer(aggregator, address(0), updateCallerReward) public {
+  constructor(
+    address aggregator,
+    uint256 periodSize,
+    uint256 baseUpdateCallerReward,
+    uint256 maxUpdateCallerReward,
+    uint256 perSecondCallerRewardIncrease
+  ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
         symbol = "FLXUSD";
         multiplier = 10;
     }

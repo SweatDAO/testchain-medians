@@ -26,7 +26,9 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 updateCallerReward_,
+      uint256 baseUpdateCallerReward_,
+      uint256 maxUpdateCallerReward_,
+      uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapPriceFeedMedianizer(
         address(0),
@@ -35,7 +37,9 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        updateCallerReward_,
+        baseUpdateCallerReward_,
+        maxUpdateCallerReward_,
+        perSecondCallerRewardIncrease_,
         granularity_
     ) public {
         symbol = "RAIUSD";
@@ -48,7 +52,9 @@ contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 updateCallerReward_,
+      uint256 baseUpdateCallerReward_,
+      uint256 maxUpdateCallerReward_,
+      uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapPriceFeedMedianizer(
         address(0),
@@ -57,7 +63,9 @@ contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        updateCallerReward_,
+        baseUpdateCallerReward_,
+        maxUpdateCallerReward_,
+        perSecondCallerRewardIncrease_,
         granularity_
     ) public {
         symbol = "FLXUSD";
