@@ -31,7 +31,7 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapPriceFeedMedianizer(
-        address(0),
+        address(0x1),
         uniswapFactory_,
         address(0),
         defaultAmountIn_,
@@ -57,7 +57,7 @@ contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapPriceFeedMedianizer(
-        address(0),
+        address(0x1),
         uniswapFactory_,
         address(0),
         defaultAmountIn_,
