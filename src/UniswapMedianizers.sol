@@ -17,10 +17,11 @@
 
 pragma solidity ^0.6.7;
 
-import "geb-uniswap-median/UniswapPriceFeedMedianizer.sol";
+import {UniswapConverterBasicAveragePriceFeedMedianizer} from "geb-uniswap-median/UniswapConverterBasicAveragePriceFeedMedianizer.sol";
+import {UniswapConsecutiveSlotsPriceFeedMedianizer} from "geb-uniswap-median/UniswapConsecutiveSlotsPriceFeedMedianizer.sol";
 
 // USD
-contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
+contract UniswapConverterBasicAverageMedianRAIUSD is UniswapConverterBasicAveragePriceFeedMedianizer {
     constructor(
       address uniswapFactory_,
       uint256 defaultAmountIn_,
@@ -30,7 +31,7 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
       uint256 maxUpdateCallerReward_,
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
-    ) UniswapPriceFeedMedianizer(
+    ) UniswapConverterBasicAveragePriceFeedMedianizer(
         address(0x1),
         uniswapFactory_,
         address(0),
@@ -46,7 +47,7 @@ contract UniswapMedianRAIUSD is UniswapPriceFeedMedianizer {
     }
 }
 
-contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
+contract UniswapConverterBasicAverageMedianFLXUSD is UniswapConverterBasicAveragePriceFeedMedianizer {
     constructor(
       address uniswapFactory_,
       uint256 defaultAmountIn_,
@@ -56,7 +57,59 @@ contract UniswapMedianFLXUSD is UniswapPriceFeedMedianizer {
       uint256 maxUpdateCallerReward_,
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
-    ) UniswapPriceFeedMedianizer(
+    ) UniswapConverterBasicAveragePriceFeedMedianizer(
+        address(0x1),
+        uniswapFactory_,
+        address(0),
+        defaultAmountIn_,
+        windowSize_,
+        converterFeedScalingFactor_,
+        baseUpdateCallerReward_,
+        maxUpdateCallerReward_,
+        perSecondCallerRewardIncrease_,
+        granularity_
+    ) public {
+        symbol = "FLXUSD";
+    }
+}
+
+contract UniswapConsecutiveSlotsMedianRAIUSD is UniswapConsecutiveSlotsPriceFeedMedianizer {
+    constructor(
+      address uniswapFactory_,
+      uint256 defaultAmountIn_,
+      uint256 windowSize_,
+      uint256 converterFeedScalingFactor_,
+      uint256 baseUpdateCallerReward_,
+      uint256 maxUpdateCallerReward_,
+      uint256 perSecondCallerRewardIncrease_,
+      uint8   granularity_
+    ) UniswapConsecutiveSlotsPriceFeedMedianizer(
+        address(0x1),
+        uniswapFactory_,
+        address(0),
+        defaultAmountIn_,
+        windowSize_,
+        converterFeedScalingFactor_,
+        baseUpdateCallerReward_,
+        maxUpdateCallerReward_,
+        perSecondCallerRewardIncrease_,
+        granularity_
+    ) public {
+        symbol = "RAIUSD";
+    }
+}
+
+contract UniswapConsecutiveSlotsMedianFLXUSD is UniswapConsecutiveSlotsPriceFeedMedianizer {
+    constructor(
+      address uniswapFactory_,
+      uint256 defaultAmountIn_,
+      uint256 windowSize_,
+      uint256 converterFeedScalingFactor_,
+      uint256 baseUpdateCallerReward_,
+      uint256 maxUpdateCallerReward_,
+      uint256 perSecondCallerRewardIncrease_,
+      uint8   granularity_
+    ) UniswapConsecutiveSlotsPriceFeedMedianizer(
         address(0x1),
         uniswapFactory_,
         address(0),
