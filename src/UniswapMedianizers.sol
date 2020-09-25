@@ -32,7 +32,7 @@ contract UniswapConverterBasicAverageMedianRAIUSD is UniswapConverterBasicAverag
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapConverterBasicAveragePriceFeedMedianizer(
-        address(0x1),
+        address(0),
         uniswapFactory_,
         address(0),
         defaultAmountIn_,
@@ -58,7 +58,7 @@ contract UniswapConverterBasicAverageMedianFLXUSD is UniswapConverterBasicAverag
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapConverterBasicAveragePriceFeedMedianizer(
-        address(0x1),
+        address(0),
         uniswapFactory_,
         address(0),
         defaultAmountIn_,
@@ -84,7 +84,7 @@ contract UniswapConsecutiveSlotsMedianRAIUSD is UniswapConsecutiveSlotsPriceFeed
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
-        address(0x1),
+        address(0),
         uniswapFactory_,
         address(0),
         defaultAmountIn_,
@@ -110,7 +110,7 @@ contract UniswapConsecutiveSlotsMedianFLXUSD is UniswapConsecutiveSlotsPriceFeed
       uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
-        address(0x1),
+        address(0),
         uniswapFactory_,
         address(0),
         defaultAmountIn_,
