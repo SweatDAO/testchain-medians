@@ -33,6 +33,19 @@ contract GovernanceLedMedianRAIUSD is GovernanceLedPriceFeedMedianizer {
     }
 }
 
+contract GovernanceLedMedianPRAIUSD is GovernanceLedPriceFeedMedianizer {
+    constructor() GovernanceLedPriceFeedMedianizer() public {
+        symbol = "PRAIUSD";
+    }
+
+    function recoverSigner(uint256 val_, uint256 age_, uint8 v, bytes32 r, bytes32 s) override internal view returns (address) {
+        return ecrecover(
+            keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", keccak256(abi.encodePacked(val_, age_, symbol)))),
+            v, r, s
+        );
+    }
+}
+
 contract GovernanceLedMedianETHUSD is GovernanceLedPriceFeedMedianizer {
     constructor() GovernanceLedPriceFeedMedianizer() public {
         symbol = "ETHUSD";

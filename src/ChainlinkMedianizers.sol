@@ -34,6 +34,20 @@ contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
     }
 }
 
+contract ChainlinkMedianPRAIUSD is ChainlinkPriceFeedMedianizer {
+    constructor(
+      address aggregator,
+      uint256 periodSize,
+      uint256 baseUpdateCallerReward,
+      uint256 maxUpdateCallerReward,
+      uint256 perSecondCallerRewardIncrease
+    ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
+        symbol = "PRAIUSD";
+        multiplier = 10;
+        staleThreshold = 3;
+    }
+}
+
 contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
   constructor(
     address aggregator,

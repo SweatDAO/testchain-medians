@@ -47,6 +47,32 @@ contract UniswapConverterBasicAverageMedianRAIUSD is UniswapConverterBasicAverag
     }
 }
 
+contract UniswapConverterBasicAverageMedianPRAIUSD is UniswapConverterBasicAveragePriceFeedMedianizer {
+    constructor(
+      address uniswapFactory_,
+      uint256 defaultAmountIn_,
+      uint256 windowSize_,
+      uint256 converterFeedScalingFactor_,
+      uint256 baseUpdateCallerReward_,
+      uint256 maxUpdateCallerReward_,
+      uint256 perSecondCallerRewardIncrease_,
+      uint8   granularity_
+    ) UniswapConverterBasicAveragePriceFeedMedianizer(
+        address(0),
+        uniswapFactory_,
+        address(0),
+        defaultAmountIn_,
+        windowSize_,
+        converterFeedScalingFactor_,
+        baseUpdateCallerReward_,
+        maxUpdateCallerReward_,
+        perSecondCallerRewardIncrease_,
+        granularity_
+    ) public {
+        symbol = "PRAIUSD";
+    }
+}
+
 contract UniswapConverterBasicAverageMedianFLXUSD is UniswapConverterBasicAveragePriceFeedMedianizer {
     constructor(
       address uniswapFactory_,
@@ -96,6 +122,32 @@ contract UniswapConsecutiveSlotsMedianRAIUSD is UniswapConsecutiveSlotsPriceFeed
         granularity_
     ) public {
         symbol = "RAIUSD";
+    }
+}
+
+contract UniswapConsecutiveSlotsMedianPRAIUSD is UniswapConsecutiveSlotsPriceFeedMedianizer {
+    constructor(
+      address uniswapFactory_,
+      uint256 defaultAmountIn_,
+      uint256 windowSize_,
+      uint256 converterFeedScalingFactor_,
+      uint256 baseUpdateCallerReward_,
+      uint256 maxUpdateCallerReward_,
+      uint256 perSecondCallerRewardIncrease_,
+      uint8   granularity_
+    ) UniswapConsecutiveSlotsPriceFeedMedianizer(
+        address(0),
+        uniswapFactory_,
+        address(0),
+        defaultAmountIn_,
+        windowSize_,
+        converterFeedScalingFactor_,
+        baseUpdateCallerReward_,
+        maxUpdateCallerReward_,
+        perSecondCallerRewardIncrease_,
+        granularity_
+    ) public {
+        symbol = "PRAIUSD";
     }
 }
 
