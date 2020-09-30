@@ -108,6 +108,7 @@ contract UniswapConsecutiveSlotsMedianRAIUSD is UniswapConsecutiveSlotsPriceFeed
       uint256 baseUpdateCallerReward_,
       uint256 maxUpdateCallerReward_,
       uint256 perSecondCallerRewardIncrease_,
+      uint256 maxWindow_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
         address(0),
@@ -119,6 +120,7 @@ contract UniswapConsecutiveSlotsMedianRAIUSD is UniswapConsecutiveSlotsPriceFeed
         baseUpdateCallerReward_,
         maxUpdateCallerReward_,
         perSecondCallerRewardIncrease_,
+        maxWindow_,
         granularity_
     ) public {
         symbol = "RAIUSD";
@@ -134,6 +136,7 @@ contract UniswapConsecutiveSlotsMedianPRAIUSD is UniswapConsecutiveSlotsPriceFee
       uint256 baseUpdateCallerReward_,
       uint256 maxUpdateCallerReward_,
       uint256 perSecondCallerRewardIncrease_,
+      uint256 maxWindow_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
         address(0),
@@ -145,6 +148,7 @@ contract UniswapConsecutiveSlotsMedianPRAIUSD is UniswapConsecutiveSlotsPriceFee
         baseUpdateCallerReward_,
         maxUpdateCallerReward_,
         perSecondCallerRewardIncrease_,
+        maxWindow_,
         granularity_
     ) public {
         symbol = "PRAIUSD";
@@ -160,6 +164,7 @@ contract UniswapConsecutiveSlotsMedianFLXUSD is UniswapConsecutiveSlotsPriceFeed
       uint256 baseUpdateCallerReward_,
       uint256 maxUpdateCallerReward_,
       uint256 perSecondCallerRewardIncrease_,
+      uint256 maxWindow_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
         address(0),
@@ -171,6 +176,7 @@ contract UniswapConsecutiveSlotsMedianFLXUSD is UniswapConsecutiveSlotsPriceFeed
         baseUpdateCallerReward_,
         maxUpdateCallerReward_,
         perSecondCallerRewardIncrease_,
+        maxWindow_,
         granularity_
     ) public {
         symbol = "FLXUSD";
