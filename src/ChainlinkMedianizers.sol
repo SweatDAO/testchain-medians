@@ -30,7 +30,7 @@ contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
     ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
         symbol = "RAIUSD";
         multiplier = 10;
-        staleThreshold = 5;
+        staleThreshold = 6;
     }
 }
 
@@ -44,7 +44,7 @@ contract ChainlinkMedianPRAIUSD is ChainlinkPriceFeedMedianizer {
     ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
         symbol = "PRAIUSD";
         multiplier = 10;
-        staleThreshold = 5;
+        staleThreshold = 6;
     }
 }
 
@@ -58,7 +58,7 @@ contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
   ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
         symbol = "ETHUSD";
         multiplier = 10;
-        staleThreshold = 5;
+        staleThreshold = 6;
     }
 }
 
@@ -72,6 +72,6 @@ contract ChainlinkMedianFLXUSD is ChainlinkPriceFeedMedianizer {
   ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
         symbol = "FLXUSD";
         multiplier = 10;
-        staleThreshold = 5;
+        staleThreshold = 6;
     }
 }
