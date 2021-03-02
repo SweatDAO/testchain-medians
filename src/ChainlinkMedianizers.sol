@@ -18,8 +18,27 @@
 pragma solidity ^0.6.7;
 
 import "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
+import "geb-chainlink-median/ChainlinkTWAP.sol";
 
-// USD
+// USD TWAP
+contract ChainlinkTWAPRAIUSD is ChainlinkTWAP {
+    constructor(
+      address aggregator,
+      uint256 windowSize,
+      uint256 maxWindowSize,
+      uint8   multiplier,
+      uint256 baseUpdateCallerReward,
+      uint256 maxUpdateCallerReward,
+      uint256 perSecondCallerRewardIncrease,
+      uint8   granularity
+    ) ChainlinkTWAP(aggregator, address(0), windowSize, maxWindowSize, multiplier, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease, granularity) public {
+        symbol = "RAIUSD";
+        multiplier = 10;
+        staleThreshold = 6;
+    }
+}
+
+// USD normal median
 contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
     constructor(
       address aggregator,
