@@ -15,10 +15,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.6.7;
+pragma solidity 0.6.7;
 
-import "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
-import "geb-chainlink-median/ChainlinkTWAP.sol";
+import {ChainlinkPriceFeedMedianizer} from "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
+import {ChainlinkTWAP} from "geb-chainlink-median/ChainlinkTWAP.sol";
 
 // USD TWAP
 contract ChainlinkTWAPRAIUSD is ChainlinkTWAP {
@@ -27,11 +27,8 @@ contract ChainlinkTWAPRAIUSD is ChainlinkTWAP {
       uint256 windowSize,
       uint256 maxWindowSize,
       uint8   multiplier,
-      uint256 baseUpdateCallerReward,
-      uint256 maxUpdateCallerReward,
-      uint256 perSecondCallerRewardIncrease,
       uint8   granularity
-    ) ChainlinkTWAP(aggregator, address(0), windowSize, maxWindowSize, multiplier, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease, granularity) public {
+    ) ChainlinkTWAP(aggregator, windowSize, maxWindowSize, multiplier, granularity) public {
         symbol = "RAIUSD";
         multiplier = 10;
         staleThreshold = 6;
@@ -42,11 +39,8 @@ contract ChainlinkTWAPRAIUSD is ChainlinkTWAP {
 contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
     constructor(
       address aggregator,
-      uint256 periodSize,
-      uint256 baseUpdateCallerReward,
-      uint256 maxUpdateCallerReward,
-      uint256 perSecondCallerRewardIncrease
-    ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
+      uint256 periodSize
+    ) ChainlinkPriceFeedMedianizer(aggregator, periodSize) public {
         symbol = "RAIUSD";
         multiplier = 10;
         staleThreshold = 6;
@@ -56,11 +50,8 @@ contract ChainlinkMedianRAIUSD is ChainlinkPriceFeedMedianizer {
 contract ChainlinkMedianPRAIUSD is ChainlinkPriceFeedMedianizer {
     constructor(
       address aggregator,
-      uint256 periodSize,
-      uint256 baseUpdateCallerReward,
-      uint256 maxUpdateCallerReward,
-      uint256 perSecondCallerRewardIncrease
-    ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
+      uint256 periodSize
+    ) ChainlinkPriceFeedMedianizer(aggregator, periodSize) public {
         symbol = "PRAIUSD";
         multiplier = 10;
         staleThreshold = 6;
@@ -70,11 +61,8 @@ contract ChainlinkMedianPRAIUSD is ChainlinkPriceFeedMedianizer {
 contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
   constructor(
     address aggregator,
-    uint256 periodSize,
-    uint256 baseUpdateCallerReward,
-    uint256 maxUpdateCallerReward,
-    uint256 perSecondCallerRewardIncrease
-  ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
+    uint256 periodSize
+  ) ChainlinkPriceFeedMedianizer(aggregator, periodSize) public {
         symbol = "ETHUSD";
         multiplier = 10;
         staleThreshold = 6;
@@ -84,11 +72,8 @@ contract ChainlinkMedianETHUSD is ChainlinkPriceFeedMedianizer {
 contract ChainlinkMedianFLXUSD is ChainlinkPriceFeedMedianizer {
   constructor(
     address aggregator,
-    uint256 periodSize,
-    uint256 baseUpdateCallerReward,
-    uint256 maxUpdateCallerReward,
-    uint256 perSecondCallerRewardIncrease
-  ) ChainlinkPriceFeedMedianizer(aggregator, address(0), periodSize, baseUpdateCallerReward, maxUpdateCallerReward, perSecondCallerRewardIncrease) public {
+    uint256 periodSize
+  ) ChainlinkPriceFeedMedianizer(aggregator, periodSize) public {
         symbol = "FLXUSD";
         multiplier = 10;
         staleThreshold = 6;

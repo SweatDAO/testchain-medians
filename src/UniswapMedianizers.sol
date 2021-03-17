@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.6.7;
+pragma solidity 0.6.7;
 
 import {UniswapConverterBasicAveragePriceFeedMedianizer} from "geb-uniswap-median/UniswapConverterBasicAveragePriceFeedMedianizer.sol";
 import {UniswapConsecutiveSlotsPriceFeedMedianizer} from "geb-uniswap-median/UniswapConsecutiveSlotsPriceFeedMedianizer.sol";
@@ -27,20 +27,13 @@ contract UniswapConverterBasicAverageMedianRAIUSD is UniswapConverterBasicAverag
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 baseUpdateCallerReward_,
-      uint256 maxUpdateCallerReward_,
-      uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapConverterBasicAveragePriceFeedMedianizer(
         address(0),
         uniswapFactory_,
-        address(0),
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        baseUpdateCallerReward_,
-        maxUpdateCallerReward_,
-        perSecondCallerRewardIncrease_,
         granularity_
     ) public {
         symbol = "RAIUSD";
@@ -53,20 +46,13 @@ contract UniswapConverterBasicAverageMedianPRAIUSD is UniswapConverterBasicAvera
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 baseUpdateCallerReward_,
-      uint256 maxUpdateCallerReward_,
-      uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapConverterBasicAveragePriceFeedMedianizer(
         address(0),
         uniswapFactory_,
-        address(0),
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        baseUpdateCallerReward_,
-        maxUpdateCallerReward_,
-        perSecondCallerRewardIncrease_,
         granularity_
     ) public {
         symbol = "PRAIUSD";
@@ -79,20 +65,13 @@ contract UniswapConverterBasicAverageMedianFLXUSD is UniswapConverterBasicAverag
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 baseUpdateCallerReward_,
-      uint256 maxUpdateCallerReward_,
-      uint256 perSecondCallerRewardIncrease_,
       uint8   granularity_
     ) UniswapConverterBasicAveragePriceFeedMedianizer(
         address(0),
         uniswapFactory_,
-        address(0),
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        baseUpdateCallerReward_,
-        maxUpdateCallerReward_,
-        perSecondCallerRewardIncrease_,
         granularity_
     ) public {
         symbol = "FLXUSD";
@@ -105,21 +84,14 @@ contract UniswapConsecutiveSlotsMedianRAIUSD is UniswapConsecutiveSlotsPriceFeed
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 baseUpdateCallerReward_,
-      uint256 maxUpdateCallerReward_,
-      uint256 perSecondCallerRewardIncrease_,
       uint256 maxWindow_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
         address(0),
         uniswapFactory_,
-        address(0),
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        baseUpdateCallerReward_,
-        maxUpdateCallerReward_,
-        perSecondCallerRewardIncrease_,
         maxWindow_,
         granularity_
     ) public {
@@ -133,21 +105,14 @@ contract UniswapConsecutiveSlotsMedianPRAIUSD is UniswapConsecutiveSlotsPriceFee
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 baseUpdateCallerReward_,
-      uint256 maxUpdateCallerReward_,
-      uint256 perSecondCallerRewardIncrease_,
       uint256 maxWindow_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
         address(0),
         uniswapFactory_,
-        address(0),
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        baseUpdateCallerReward_,
-        maxUpdateCallerReward_,
-        perSecondCallerRewardIncrease_,
         maxWindow_,
         granularity_
     ) public {
@@ -161,21 +126,14 @@ contract UniswapConsecutiveSlotsMedianFLXUSD is UniswapConsecutiveSlotsPriceFeed
       uint256 defaultAmountIn_,
       uint256 windowSize_,
       uint256 converterFeedScalingFactor_,
-      uint256 baseUpdateCallerReward_,
-      uint256 maxUpdateCallerReward_,
-      uint256 perSecondCallerRewardIncrease_,
       uint256 maxWindow_,
       uint8   granularity_
     ) UniswapConsecutiveSlotsPriceFeedMedianizer(
         address(0),
         uniswapFactory_,
-        address(0),
         defaultAmountIn_,
         windowSize_,
         converterFeedScalingFactor_,
-        baseUpdateCallerReward_,
-        maxUpdateCallerReward_,
-        perSecondCallerRewardIncrease_,
         maxWindow_,
         granularity_
     ) public {
