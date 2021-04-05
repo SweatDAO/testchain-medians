@@ -19,6 +19,7 @@ pragma solidity 0.6.7;
 
 import {ChainlinkPriceFeedMedianizer} from "geb-chainlink-median/ChainlinkPriceFeedMedianizer.sol";
 import {ChainlinkTWAP} from "geb-chainlink-median/ChainlinkTWAP.sol";
+import {ChainlinkRelayer} from "geb-chainlink-median/ChainlinkRelayer.sol";
 
 // USD TWAP
 contract ChainlinkTWAPRAIUSD is ChainlinkTWAP {
@@ -77,5 +78,36 @@ contract ChainlinkMedianFLXUSD is ChainlinkPriceFeedMedianizer {
         symbol = "FLXUSD";
         multiplier = 10;
         staleThreshold = 6;
+    }
+}
+
+// USD relayer
+contract ChainlinkRelayerRAIUSD is ChainlinkRelayer {
+    constructor(
+      address aggregator,
+      uint256 staleThreshold
+    ) ChainlinkRelayer(aggregator, staleThreshold) public {
+        symbol = "RAIUSD";
+        multiplier = 10;
+    }
+}
+
+contract ChainlinkRelayerETHUSD is ChainlinkRelayer {
+  constructor(
+    address aggregator,
+    uint256 staleThreshold
+  ) ChainlinkRelayer(aggregator, staleThreshold) public {
+        symbol = "ETHUSD";
+        multiplier = 10;
+    }
+}
+
+contract ChainlinkRelayerFLXUSD is ChainlinkRelayer {
+  constructor(
+    address aggregator,
+    uint256 staleThreshold
+  ) ChainlinkRelayer(aggregator, staleThreshold) public {
+        symbol = "FLXUSD";
+        multiplier = 10;
     }
 }
